@@ -23,4 +23,4 @@ If you see a message like `permission denied: ./run.sh`, run `chmod 755 ./run.sh
 ## Docker images
 
 - gcc (https://hub.docker.com/repository/docker/unicatflower/gcc)
-- python3 (https://hub.docker.com/r/unicatflower/python3/tags?page=1&ordering=last_updated)
+- python3 (https://hub.docker.com/r/unicatflower/python3)
