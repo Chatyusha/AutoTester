@@ -51,7 +51,7 @@ if [[ "$ask" == "n" ]];then
 fi
 
 if [[ "$dockerfilepath" == "none" ]]; then
-	docker run --rm -t -v $(pwd):/home/Tester -u Tester -w /home/Tester --name TestContainer unicatflower/gcc:user /bin/bash -c "./tester.sh $filename"
+	docker run --rm -t -v $(pwd):/home/Tester -u Tester -w /home/Tester --name TestContainer unicatflower/python3:user /bin/bash -c "./tester.sh $filename"
 else
 	docker build -f $(basename $dockerfilepath) $(dirname "$dockerfilepath") -t testerimage
 	docker run --rm  -t -v $(pwd):/home/Tester -u Tester -w /home/Tester --name TestContainer testerimage /bin/bash -c "chmod 755 tester.sh; ./tester.sh $filename;"
