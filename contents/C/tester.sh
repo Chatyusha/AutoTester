@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-set -x
-
+set -e
 # Compile and Test C file with gcc
 
 filename="$1"
@@ -10,6 +9,6 @@ gcc "$filename" -o "$basename"
 
 for i in ./tests/input/*;
 do
-	"./$basename" < "$i" > "./tests/output/$(basename $i)"
+	"./$basename" < "$i" | tee  "./tests/output/$(basename $i)" 
 done
 rm -f "./$basename"
